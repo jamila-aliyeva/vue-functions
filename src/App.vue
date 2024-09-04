@@ -1,11 +1,38 @@
 <template>
   <div class="wrapper">
-  <Card v-for="el in 4" :key="el"/>
+  <Card v-for="item in cardData" :data="item" :key="item.id" />
   </div>
 </template>
 
 <script setup>
-import Card from "./components/card/index.vue"
+import { ref } from "vue";
+import Card from "./components/card/index.vue";
+
+const cardData=ref([
+ {
+  img:"https://picsum.photos/id/300/300/300",
+    title:"Card title 1", 
+    description: "lorem ipsum lorem 1", 
+    isBuy:"true"
+ }, 
+ {
+  img:"https://picsum.photos/id/302/300/300",
+    title:"Card title 2", 
+    description: "lorem ipsum lorem 2",
+    isBuy:"false"
+ }, {
+  img:"https://picsum.photos/id/306/300/300",
+    title:"Card title 3", 
+    description: "lorem ipsum lorem 3",
+    isBuy:"false"
+ }
+ , {
+  img:"https://picsum.photos/id/304/300/300",
+    title:"Card title 4", 
+    description: "lorem ipsum lorem 4",
+    isBuy:"true"
+ }
+])
 
 </script>
 
