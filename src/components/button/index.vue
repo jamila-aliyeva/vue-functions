@@ -1,11 +1,13 @@
 <template>
-    <button :disabled="!desabled">
-        button
+    <button @click ="emit('notif', 'successfully saved')" :disabled="!desabled">
+        save
     </button>
 </template>
 
 <script setup>
- import { defineProps } from 'vue';
+ import { defineProps, defineEmits } from 'vue';
+
+ const etims = defineEmits(['notif'])
 
  const props=defineProps({
     desabled:{

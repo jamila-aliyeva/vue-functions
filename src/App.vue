@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-  <Card v-for="item in cardData" :data="item" :key="item.id" />
+  <Card v-for="item in cardData" :data="item" :key="item.id" @notif="notification" />
   </div>
 </template>
 
@@ -33,6 +33,10 @@ const cardData=ref([
     isBuy:"true"
  }
 ])
+
+function notification(messege){
+  alert(messege)
+}
 
 </script>
 

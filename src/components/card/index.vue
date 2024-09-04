@@ -4,16 +4,22 @@
    <div class="card-body">
     <h1 class="card-title">{{ props.data.title }}</h1>
     <p>{{ props.data.description }}</p> 
-    <Button :desabled="props.data.isBuy"/>
+    <Button @notif="recivedData" />
    </div>
    </div>
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
+import { defineProps} from 'vue';
 import Button from "../button/index.vue"
 
 // const props=defineProps(['title', 'body', 'img']) first way
+
+const recivedData=(massege)=>{
+  emit('notif', massege)
+  
+}
+const emit=defineEmits(['notif'])
 
 const props=defineProps({
   data:{
